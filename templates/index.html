@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Mars</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+
+</head>
+
+<body style="background-color: black">
+	<div class="container bg-white col-lg-11 col-xl-11">
+		<div class="jumbotron text-center">
+    		<h1>Mission To Mars</h1>
+    		<p>
+			<a class="btn btn-primary btn-lg" href="/scrape" role="button">Initiate Space Exploration</a>
+			</p>
+    	</div>
+
+    <div class="container col-lg-auto">
+      	<div class="col-lg-auto">
+		 	<h3>Latest Mars News</h3>
+        	<h5>{{to_mars.nasa_title}}</h5>
+		  	<p>{{to_mars.nasa_tease}}</p>
+		</div>
+	</div>
+		
+<br>
+	<hr>  
+	
+	<div class="row my-2">
+    <div class="mx-auto col-11 col-sm-11 col-lg-7">
+       	<img src="{{ to_mars.jpl }}" alt="featured" height="75%" width="100%">
+	</div>
+	<div class="col-md mx-auto mb-auto my-2">
+		<h5 style="text-align: center" class=" col-4 mx-auto col-lg-6">
+			Mars Weather
+		</h5>
+		<p>
+			{{to_mars.mars_weather}}
+		</p>
+
+	<hr>
+<br>
+		<div class="border-0 table table-striped text-center">
+			{{ to_mars.facts | safe}}
+		</div>
+	</div>
+    </div>
+	
+	<hr>
+<br>
+
+	<div class="container mx-auto col-lg-auto">
+	<div class="row">
+	{% for elon in to_mars.usgs %}
+	<div class="mx-auto col-md-5" style="margin: 2%; border: solid; border-color: black;">
+		<img src="{{ elon.img_url }}" alt="{{ elon.titles }}" class="col mx-auto my-2 tesla">
+		<h3 style="text-align: center">
+			{{ elon.titles }}
+		</h3>
+		</div>
+		{% endfor %}
+	</div>
+	</div>
+	</div>
+
+</body>
+</html>
