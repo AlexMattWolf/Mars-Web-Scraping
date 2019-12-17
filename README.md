@@ -52,10 +52,10 @@ After conversion, using Flask, the dictionary of results was uploaded into Mongo
 1. Clone This Repo to A Local File
 
 2. Using GitBash, launch the app.py: 
-    python app.py
+* python app.py
 
 2.5. If initially running this app, in a different instance of GitBash use the following code.
-    mongod
+* mongod
 
 3. Next, in your preferred web browser type _127.0.0.1:5000_ into the URL. 
 4. Press the "Initiate Space Exploration Button" and let Chrome Driver run without interruption. Do not close.
